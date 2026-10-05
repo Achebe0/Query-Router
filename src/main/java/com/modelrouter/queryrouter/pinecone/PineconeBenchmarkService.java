@@ -25,4 +25,24 @@ public class PineconeBenchmarkService {
                 "confidence", confidence
         );
     }
+
+    public boolean isComplexQuery(String query) {
+        String normalized = query.toLowerCase();
+        int complexitySignals = 0;
+
+        if (normalized.contains(" and ") || normalized.contains(" then ")) {
+            complexitySignals++;
+        }
+        if (normalized.contains("compare") || normalized.contains("versus") || normalized.contains("vs")) {
+            complexitySignals++;
+        }
+        if (normalized.contains("also") || normalized.contains("additionally")) {
+            complexitySignals++;
+        }
+        if (normalized.contains(",")) {
+            complexitySignals++;
+        }
+
+        return complexitySignals >= 2;
+    }
 }
