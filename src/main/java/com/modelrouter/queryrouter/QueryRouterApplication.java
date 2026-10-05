@@ -1,0 +1,13 @@
+package com.modelrouter.queryrouter;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class QueryRouterApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(QueryRouterApplication.class, args);
+	}
+
+}
